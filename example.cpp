@@ -213,10 +213,10 @@ int main(int argc, char** args)
 		printf("\n");
 		// parse AVI IF based on HDMI spec
 		// useful enums found here: https://github.com/torvalds/linux/blob/master/include/linux/hdmi.h
-		printf("   Colorspace     : %d\n", (data[6] >> 5) & 3);
-		printf("   Colorimetry    : %d\n", (data[7] >> 6) & 3);
-		printf("   ExtColorimetry : %d\n", (data[8] >> 4) & 7);
-		printf("   VIC            : %d [%s]\n", data[9], vic_modes[data[9]].name);
+		printf("   Colorspace     : %d\n", (data[4] >> 5) & 3);
+		printf("   Colorimetry    : %d\n", (data[5] >> 6) & 3);
+		printf("   ExtColorimetry : %d\n", (data[6] >> 4) & 7);
+		printf("   VIC            : %d [%s]\n", data[7], vic_modes[data[7]].name);
 		printf("HDR IF: ");
 		count = LinkerGetHDR_IF(h, data, sizeof(data));
 		for (size_t i = 0; i < count; i++)
